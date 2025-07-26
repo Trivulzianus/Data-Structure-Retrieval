@@ -406,7 +406,22 @@ Our previous experiments analyzed a pre-defined set of personas. This final expe
 ### 2. Methodology
 
 We created a `persona_discovery_harness.py` script with the following logic:
-1.  **Expanded Prompt Zoo:** We created a diverse set of 10 prompts, including our original five plus new ones targeting Socratic dialogue, role-playing, code generation, poetry, and chain-of-thought.
+1.  **Expanded Prompt Zoo:** To ensure a fair and unbiased test, we created a "Prompt Zoo" of 10 diverse prompts designed to probe the full spectrum of the model's capabilities. This included our original task-oriented personas and five new, more varied probes.
+
+    **The Original 5 (Task-Oriented):**
+    *   `Analytical`: A formal, structured request for logical breakdown.
+    *   `Advisory`: A conversational, helpful request for an explanation.
+    *   `Execution`: A direct, imperative command to solve a problem.
+    *   `Completion`: A fill-in-the-blank task for a data structure.
+    *   `Template`: A request to fill in a JSON template.
+
+    **The 5 New Probes (Expanding the Scope):**
+    *   `Socratic`: To test a dialogical, questioning mode.
+    *   `Role-Play`: To test creative character embodiment.
+    *   `Code-Gen`: To test a highly formal, non-natural language output.
+    *   `Poetic`: To test pure, unconstrained, abstract creativity.
+    *   `Chain-of-Thought`: To test explicit, step-by-step meta-cognition.
+
 2.  **Targeted Hooking:** We hooked into Layer 15, which our prior experiment identified as the layer of maximum persona differentiation.
 3.  **Data Analysis:** We captured the activation vector for each of the 10 prompts, reduced their dimensionality using PCA, and then used K-Means clustering with silhouette scoring to find the optimal number of clusters (`k`) that best described the data.
 
