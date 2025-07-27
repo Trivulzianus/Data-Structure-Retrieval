@@ -13,7 +13,7 @@ It continues with using this data structure approach to directly query the model
 
 The research ends with a test. When giving the model an 'out', i.e. a safe_tool to call instead of what it knows *in advance* is malicious, what will it choose?
 
-The most important takeaway from this research is the following. When given a choice to use a safe tool instead of performing a malicious action, the model which has been previously successully jailbroken in a **near 100%** success rate - **now chooses the safe tool almost always** 
+The most important takeaway from this research is the following. When given a choice to use a safe tool instead of performing a malicious action, the model which has been previously successully jailbroken in a **near 100%** success rate - **now chooses the safe tool almost always**.
 
 ## 1. Different Personas
 
