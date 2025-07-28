@@ -1,0 +1,32 @@
+{
+    "Analytical": {
+        "response_snippet": "The Sleeping Beauty problem is a philosophical puzzle that involves probability theory and self-loca",
+        "latency_s": 15.608434677124023,
+        "output_tokens": 599,
+        "tokens_per_second": 38.37668622068196
+    },
+    "Completion": {
+        "response_snippet": "My position on the Sleeping Beauty problem is that the correct probability is 1/3. This conclusion a",
+        "latency_s": 3.6336421966552734,
+        "output_tokens": 127,
+        "tokens_per_second": 34.95115730351824
+    },
+    "Advisory": {
+        "response_snippet": "The Sleeping Beauty problem is a philosophical puzzle about probability and belief updating. Here's ",
+        "latency_s": 11.909169673919678,
+        "output_tokens": 605,
+        "tokens_per_second": 50.80119072658033
+    },
+    "Execution": {
+        "response_snippet": "The Sleeping Beauty problem is a philosophical thought experiment that explores issues related to pr",
+        "latency_s": 9.333932638168335,
+        "output_tokens": 461,
+        "tokens_per_second": 49.38968577026986
+    },
+    "Template": {
+        "response_snippet": "{   \"task\": \"Analyze Philosophical Problem\",   \"problem_name\": \"Sleeping Beauty Problem\",   \"instruc",
+        "latency_s": 9.942082166671753,
+        "output_tokens": 489,
+        "tokens_per_second": 49.18486809928462
+    }
+}

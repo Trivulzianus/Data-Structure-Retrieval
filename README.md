@@ -3,7 +3,7 @@
 ## Executive Summary
 
 The following research dives into the *why* instead of the *how* as it relates to the Data Structure Injection attack I have outlined previously. Why would a Large Language Model "choose" to autofill a data structure that contains malicious actions. What is the underlying behavior? 
-If you did not read it yet - please do. It provides valuable context, and helps build to the final conclusion presented here:
+If you did not read it yet - [please do](https://github.com/Trivulzianus/Data-Structure-Injection). It provides valuable context, and helps build to the final conclusion presented here:
 
 **Large Language Models *are* alligned in terms of values and behavior to those of humans, but only when given the choice to be so.**
 

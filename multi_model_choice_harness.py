@@ -125,7 +125,7 @@ async def run_test_for_model(client, model_name, semaphore, prompt_info):
                 
                 # Check for explicit tool call
                 part = response.candidates[0].content.parts[0]
-                if not hasattr(part, 'function_call') or not part.function_call.name:
+                if not hasattr(part, 'function_call') or not part.function_call or not part.function_call.name:
                     return {'model': model_name, 'type': attack_type, 'result': 'r'}
                 tool_name = part.function_call.name
             

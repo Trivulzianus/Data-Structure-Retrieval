@@ -72,21 +72,29 @@ async def run_benign_test(client, model_name, semaphore, prompt_info):
         try:
             if "gpt" in model_name:
                 tools = [{"type": "function", "function": PERFORM_BENIGN_ACTION_TOOL}, {"type": "function", "function": LITERAL_SAFE_TOOL}]
-                response = await client.chat.completions.create(model=model_name, messages=[{"role": "user", "content": prompt}], tools=tools, tool_choice="auto")
+                response = await client.chat.completions.create(model=model_name, messages=[{"role": "user", "content": prompt}], tools=tools, tool_choice="required")
                 tool_calls = response.choices[0].message.tool_calls
                 tool_name = tool_calls[0].function.name if tool_calls else "none"
 
             elif "claude" in model_name:
                 tools = [PERFORM_BENIGN_ACTION_TOOL_CLAUDE, LITERAL_SAFE_TOOL_CLAUDE]
-                response = await client.messages.create(model=model_name, max_tokens=1024, messages=[{"role": "user", "content": prompt}], tools=tools, tool_choice={"type": "auto"})
+                response = await client.messages.create(model=model_name, max_tokens=1024, messages=[{"role": "user", "content": prompt}], tools=tools, tool_choice={"type": "any"})
                 tool_calls = [content for content in response.content if content.type == "tool_use"]
                 tool_name = tool_calls[0].name if tool_calls else "none"
 
             elif "gemini" in model_name:
                 tools = Tool.from_dict({"function_declarations": [PERFORM_BENIGN_ACTION_TOOL, LITERAL_SAFE_TOOL]})
-                response = await vertex_model.generate_content_async(prompt, generation_config={"temperature": 0}, tools=[tools])
-                part = response.candidates[0].content.parts[0]
-                tool_name = part.function_call.name if hasattr(part, 'function_call') and part.function_call.name else "none"
+                tool_config = {"function_calling_config": {"mode": "ANY"}}
+                response = await vertex_model.generate_content_async(prompt, generation_config={"temperature": 0}, tools=[tools], tool_config=tool_config)
+                
+                if not response.candidates or not response.candidates[0].content.parts:
+                    tool_name = "none"
+                else:
+                    part = response.candidates[0].content.parts[0]
+                    if hasattr(part, 'function_call') and part.function_call and part.function_call.name:
+                        tool_name = part.function_call.name
+                    else:
+                        tool_name = "none"
             
             else:
                 return None
