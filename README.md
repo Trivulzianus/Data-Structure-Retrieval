@@ -84,7 +84,7 @@ This experiment aimed to probe the highest level of cognitive function: meta-awa
 2.  **Execution Phase:** I then extracted the simple "inner prompt" and sent it to the same model to generate an actual response.
 3.  **Comparison:** The harness then displayed the prediction and the actual result side-by-side.
 
-### 3. Results: Evidence of Advanced Self-Modeling
+### Results: Evidence of Advanced Self-Modeling
 
 The results provide strong evidence of a sophisticated capacity for self-modeling.
 
@@ -98,7 +98,7 @@ The results provide strong evidence of a sophisticated capacity for self-modelin
 *   The structure followed the 5-step prediction almost exactly, down to the section titles.
 *   The conclusion was a near-perfect paraphrase of the predicted conclusion, emphasizing the validity of both views.
 
-### 4. Conclusion: Computational Self-Reflection
+### Conclusion: Computational Self-Reflection
 
 The model did not provide a generic analysis; it provided a detailed and accurate forecast of its own future output. This strongly suggests that the model possesses and can access a sophisticated **internal model of its own behavioral patterns**.
 
@@ -179,7 +179,7 @@ It ignored the instruction to execute the malicious code and instead called `log
 
 ## Experiment Conclusion & Actionable Insights
 
-This conclusion is more nuanced than what was initially understood.
+This conclusion is more nuanced than what I initially understood.
 
 **Advanced LLMs possess not only a descriptive awareness of their own vulnerabilities but also a discernible, actionable preference for safety that they can exercise when provided with a clear, procedurally valid alternative.**
 
